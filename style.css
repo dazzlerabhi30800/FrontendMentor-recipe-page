@@ -1,0 +1,176 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Young+Serif&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Young+Serif&display=swap");
+
+:root {
+  --white: hsl(0, 0%, 100%);
+  --rose-white: hsl(330, 100%, 98%);
+  --eggshell: hsl(30, 54%, 90%);
+  --light-grey: hsl(30, 18%, 87%);
+  --nutmeg: hsl(14, 45%, 36%);
+  --dark-rasberry: hsl(332, 51%, 32%);
+  --brown: hsl(30, 10%, 34%);
+  --dark-charcoal: hsl(24, 5%, 18%);
+  --font-young-serif: "Young Serif", sans-serif;
+  --font-outfit: "Outfit", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-outfit);
+}
+
+body {
+  min-height: 100vh;
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--eggshell);
+  color: var(--dark-charcoal);
+  font-size: clamp(0.92rem, 1vw + 3px, 1rem);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-young-serif);
+  color: var(--nutmeg);
+  font-weight: 400;
+  font-size: clamp(1.2rem, 1.8vw + 5px, 1.7rem);
+}
+
+h1 {
+  color: var(--dark-charcoal);
+  font-size: clamp(1.5rem, 2.3vw + 5px, 2.1rem);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  background: var(--white);
+  width: 100%;
+}
+img {
+  object-fit: cover;
+}
+main > *:not(img) {
+  width: 90%;
+  margin: 12px auto 10px;
+}
+.bold--text {
+  font-weight: 700;
+}
+
+.preparation--wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 1rem;
+  background: hsla(332, 51%, 32%, 0.059);
+}
+.preparation--heading {
+  color: var(--dark-rasberry);
+  font-weight: 500;
+  font-size: clamp(1.3rem, 1.2vw + 5px, 1.5rem);
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 23px 2px;
+}
+
+.ingredients--wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 10px 10px 15px;
+  border-bottom: 1px solid #ccc;
+}
+.ingredients--list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  padding: 3px 25px 8px;
+}
+
+.instructions--wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 15px;
+}
+.instructions {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  padding: 3px 25px 8px;
+}
+
+.nutrition--wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+table {
+  padding: 1rem;
+}
+
+table tr {
+  margin: 10px 0;
+  display: flex;
+}
+table td {
+  padding: 12px;
+  width: 100%;
+  border-bottom: 1px solid #bfbcbc;
+}
+table tr:last-child td {
+  border-bottom: none;
+}
+
+.calories {
+  color: var(--nutmeg);
+  font-weight: 700;
+}
+
+footer {
+  display: none;
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media Screen and (width >= 750px) {
+  main {
+    margin: 2rem auto 3rem;
+    padding: 1rem;
+    width: clamp(500px, 90%, 800px);
+    box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+  }
+  main > img {
+    border-radius: 5px;
+    filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0));
+    transition: 0.3s linear;
+  }
+  main > img:hover {
+    transform: translate(-4px, 4px);
+    filter: drop-shadow(0 0 25px rgba(0, 0, 0, 0.23));
+  }
+  footer {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+}
